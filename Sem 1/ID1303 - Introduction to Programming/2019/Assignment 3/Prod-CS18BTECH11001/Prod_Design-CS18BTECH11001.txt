@@ -1,0 +1,6 @@
+1.I stored the input value in a variable of int datatype and declared a long variable for storing the product.
+2.I am checking whether N>1(as positive even numbers start with 2) and N<=30(else the product will be out of range of long datatype as already given)
+3.I declared an integer j to store the even numbers obtained while iterating.initialised j=2 as 2 is the smallest even number.As even numbers differs by 2 i have added 2 to j in every iteration and checking whether j<=N ar not.if it is not satisfied the loop will be exited.printing j will print the integer number associated with that iteration.so while the loop ends all the required prime numbers will be printed.
+4.Multipling product with the new even number obtained by adding 2 to j until the loop ends give the product of the even numbers <=N.after the loop ends we will print the final product is obtained.
+5.The else if case includes N=1(as there is no even positive integer less than or equal to 1 i will keep the output blank.)
+6.The else cases includes N<1(give that N must be a positive integer,so invalid input,so we print "Error"),N>30(product will be greater than 10^18.As the variable declared to store product is of long datatype which cant store value greater than 10^18,it is an Integer overflow and invalid case.So we print "Error" as given).

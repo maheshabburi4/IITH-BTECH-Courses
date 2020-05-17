@@ -1,0 +1,102 @@
+% In this run we will solve a linear programming problem to illustrate probabilistic reasoning.
+% Suppose Pr(A => B) = 0.6, and Pr(A) = 0.8.
+% We will compute upper and lower bounds on Pr(B).
+f = [ 1 0 1 0 ]
+
+f =
+
+     1     0     1     0
+
+A = [ 1 0 1 1 ; 1 1 0 0 ; 1 1 1 1 ]
+
+A =
+
+     1     0     1     1
+     1     1     0     0
+     1     1     1     1
+
+A = [ A ; -A ]
+
+A =
+
+     1     0     1     1
+     1     1     0     0
+     1     1     1     1
+    -1     0    -1    -1
+    -1    -1     0     0
+    -1    -1    -1    -1
+
+A = [ A ; -diag(ones(4,1)) ]
+
+A =
+
+     1     0     1     1
+     1     1     0     0
+     1     1     1     1
+    -1     0    -1    -1
+    -1    -1     0     0
+    -1    -1    -1    -1
+    -1     0     0     0
+     0    -1     0     0
+     0     0    -1     0
+     0     0     0    -1
+
+b = [ 0.6 0.8 1]'
+
+b =
+
+    0.6000
+    0.8000
+    1.0000
+
+b = [ b ; -b ]
+
+b =
+
+    0.6000
+    0.8000
+    1.0000
+   -0.6000
+   -0.8000
+   -1.0000
+
+b = [ b ; zeros(4,1) ]
+
+b =
+
+    0.6000
+    0.8000
+    1.0000
+   -0.6000
+   -0.8000
+   -1.0000
+         0
+         0
+         0
+         0
+
+P = linprog(f,A,b)
+
+Optimal solution found.
+
+
+P =
+
+    0.4000
+    0.4000
+         0
+    0.2000
+
+P1 = linprog(-f,A,b)
+
+Optimal solution found.
+
+
+P1 =
+
+    0.4000
+    0.4000
+    0.2000
+         0
+
+diary off

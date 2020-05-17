@@ -1,0 +1,182 @@
+% In this example we will run logistic regression twice:
+% First on a linearly separable data set, and second on a data set that is not.
+% First the linearly separable data set.
+% There are 8 positively labelled samples and 6 negatively labelled samples.
+Xp = [ 0 1 ; 1 2 ; 1 3 ; 1.5 2.5 ; 2 3 ; 2.5 2.5 ; 4 3 ; 3.5 3 ]
+
+Xp =
+
+         0    1.0000
+    1.0000    2.0000
+    1.0000    3.0000
+    1.5000    2.5000
+    2.0000    3.0000
+    2.5000    2.5000
+    4.0000    3.0000
+    3.5000    3.0000
+
+Xn = [ 2 0 ; 3 1 ; 4 1 ; 5 1 ; 5 2 ; 6 2 ]
+
+Xn =
+
+     2     0
+     3     1
+     4     1
+     5     1
+     5     2
+     6     2
+
+yp = ones(8,1) ; yn = zeros(6,1)
+
+yn =
+
+     0
+     0
+     0
+     0
+     0
+     0
+
+X = [ Xp ; Xn ] , y = [ yp ; yn ]
+
+X =
+
+         0    1.0000
+    1.0000    2.0000
+    1.0000    3.0000
+    1.5000    2.5000
+    2.0000    3.0000
+    2.5000    2.5000
+    4.0000    3.0000
+    3.5000    3.0000
+    2.0000         0
+    3.0000    1.0000
+    4.0000    1.0000
+    5.0000    1.0000
+    5.0000    2.0000
+    6.0000    2.0000
+
+
+y =
+
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     0
+     0
+     0
+     0
+     0
+     0
+
+% Now we run the command glmfit
+b = glmfit(X,y,'binomial','link','logit')
+[Warning: Iteration limit reached.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('glmfit', '/home/sagar/MATLAB/R2018b/toolbox/stats/stats/glmfit.m', 332)" style="font-weight:bold">glmfit</a> (<a href="matlab: opentoline('/home/sagar/MATLAB/R2018b/toolbox/stats/stats/glmfit.m',332,0)">line 332</a>)] 
+[Warning: The estimated coefficients perfectly separate failures from successes. This means the
+theoretical best estimates are not finite. For the fitted linear combination XB of the predictors,
+the sample proportions P of Y=N in the data satisfy:
+   XB<-1.92571: P=0
+   XB>-1.92571: P=1] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('glmfit>diagnoseSeparation', '/home/sagar/MATLAB/R2018b/toolbox/stats/stats/glmfit.m', 545)" style="font-weight:bold">glmfit>diagnoseSeparation</a> (<a href="matlab: opentoline('/home/sagar/MATLAB/R2018b/toolbox/stats/stats/glmfit.m',545,0)">line 545</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('glmfit', '/home/sagar/MATLAB/R2018b/toolbox/stats/stats/glmfit.m', 338)" style="font-weight:bold">glmfit</a> (<a href="matlab: opentoline('/home/sagar/MATLAB/R2018b/toolbox/stats/stats/glmfit.m',338,0)">line 338</a>)] 
+
+b =
+
+  -23.2601
+  -47.0904
+   93.0755
+
+% As expected, because the data is linearly separable, the coefficients 
+% keep becoming larger and larger.
+% So now we clear this data and try a nonseparable data set.
+clear all
+% This data set contains five positively labelled points and three negatively labelled points.
+X = [ 0 0 ; 3.5 2 ; 5.5 1 ; 2 1 ; 7.5 1.5 ; 2 0 ; 4 1 ; 7 0.5 ]
+
+X =
+
+         0         0
+    3.5000    2.0000
+    5.5000    1.0000
+    2.0000    1.0000
+    7.5000    1.5000
+    2.0000         0
+    4.0000    1.0000
+    7.0000    0.5000
+
+y = [ ones(5,1) ; zeros(3,1) ]
+
+y =
+
+     1
+     1
+     1
+     1
+     1
+     0
+     0
+     0
+
+b = glmfit(X,y,'binomial','link','logit')
+
+b =
+
+    0.3044
+   -0.6920
+    3.9391
+
+% Note that b(1) is actually the NEGATIVE of the bias term theta, because the glmfit command
+% adds a +1 to each training sample and not -1 .
+diary off
+diary off
+% Now we carry on by computing the probability associated with each training sample.
+% First we pad X by putting a columns of ones
+X1 = [ ones(8,1) X ]
+
+X1 =
+
+    1.0000         0         0
+    1.0000    3.5000    2.0000
+    1.0000    5.5000    1.0000
+    1.0000    2.0000    1.0000
+    1.0000    7.5000    1.5000
+    1.0000    2.0000         0
+    1.0000    4.0000    1.0000
+    1.0000    7.0000    0.5000
+
+% Compute the weighted sum associated with each training sample.
+c = X1*b
+
+c =
+
+    0.3044
+    5.7606
+    0.4375
+    2.8595
+    1.0231
+   -1.0796
+    1.4755
+   -2.5700
+
+% Compute the probabilities associated with each sample using the sigmoidal function
+p = 1 ./ (1 + exp(-c))
+
+p =
+
+    0.5755
+    0.9969
+    0.6077
+    0.9458
+    0.7356
+    0.2536
+    0.8139
+    0.0711
+
+save Logis
+exit

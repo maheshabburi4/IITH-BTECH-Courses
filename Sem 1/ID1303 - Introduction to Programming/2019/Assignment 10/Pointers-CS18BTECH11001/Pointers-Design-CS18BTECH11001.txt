@@ -1,0 +1,22 @@
+pseudo code :
+rev(*s,len):
+	if *s is not at the ending point(not pointing \n)
+		rev(s+1,len-1)
+		print *s
+
+main():
+	input string using fgets
+	len=strlen(s)-1
+	if it's an empty string
+		print empty
+	if len>10
+		print more than 10 characters are entered
+	else
+		rev(*s,len)
+
+design :
+1.I declared a character array of size more than 10(1000) as the user can enter any number of characters.
+2.As fgets function stores last value as \n,strlen() return value of actual size +1.So,i subtracted by 1 to get original size of string.
+3.if the length is 0,I printed error.else if length is >10 print Error,else call rev() with passing s,len as parameters.
+4.I first check if the len is!=0(it can be 0 for recursive case).then I perform aa recursive call of rev funtion with moving the pointer to next index and decreasing length by 1.
+5.After Each recursive call I print the present character pointed by pointer.At final I get the reverse of given string. 

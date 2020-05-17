@@ -1,0 +1,73 @@
+Pseudo code :
+add(){
+	print a+b
+}
+subtract(){
+	print a-b
+}
+multiply(){
+	loop b times
+		add a to result each time
+	print result
+}
+divide(){
+	if b=0
+		print exception
+	else
+		initialize i to a-b
+		loop until i<0
+			subtract b from i each time
+			increase result by 1 each time
+		print result
+}
+modulus(){
+	if b=0
+		print exception
+	else
+		initialize i to a
+		loop until i<0
+			subtract b from i each time
+		loop until i>0
+			add b to i each time
+		print result=i
+}
+square(){
+	loop a times
+		add a to result each time
+	print result
+}
+squareroot(){
+	loop until i>a
+		increase result by 1
+		increase i by nth odd integer where n is the iteration count = result
+	print result
+}
+log(){
+	if a=0
+		print exception
+	else
+		loop until i<1
+			divide i by 2
+			increase result by 1
+		print result
+}
+main(){
+	switch to the given choice
+	switch(choice)
+		case 9:
+			exit using return 0;
+}
+
+Design :
+1.print the menu every time using the while(1) which is always true and loop until we exit internally.
+2.take input of the choice.
+3.compare choice with each number 1-9 using switch case and call the respective functions.
+4.I used long for input as some compilers allocate only 2 bytes for int which becomes integer overflow.Using long it allocates 4 bytes so it can take values upto 10^9.
+4.for add & subtract simply print the + and - values respectively.
+5.for multiply declare a variable of long long int data type for the result as the multiplication of 10^9 and 10^9 is very large and long cannot store it.loop for b times and add a to result each time.
+6.for divide first check whether the divisor is 0 or not.if yes print exceptional case else note how many times the loop runs until the entered dividend is <0 by subtracting the divisor.
+7.for modulus first check whether the divisor is 0 or not.if yes print exceptional case else loop runs until the entered dividend is <0 by subtracting the divisor and loop runs until the entered dividend is >0 by adding the divisor(if the negative number is give or if i<0 we have to output positive integer for the remainder).
+8.for square loop a times and add a to result each time.As the result can be very long I used long long int for storing it.
+9.for square root loop until the sum of iterated number of odd numbers is greater than the given number.We used the logic that the sum of n odd numbers is the square of n.
+10.for log first check if the given number is 0 or not.if yes print exception else divide the given number by 2 until it becomes <1 and note the no of iterations.
+11.if the case is 9 the return 0 will exit the main function so exit the run.

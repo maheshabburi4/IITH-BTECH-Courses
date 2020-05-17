@@ -1,0 +1,23 @@
+
+1.I first taken the input from the user by declaring two variable of int type as given <=15.
+2.I checked whether the given input satisfies the given conditions using a if condition
+	i)x>=y		- else the combination is invalid
+	ii)y>=0 or x>=0	- else the combination will be invalid
+3.if the above conditions satisfied then i declared a long variable for combination value
+4.I have created a long returing function(since the value may be large and can't be stored in int data type) for the factorial which has arguments of an integer.
+5.I have declared a long variable for factorial value and initialised to 1.
+6.I have used a for loop which iterates from 2 to n and mutiplies the iteration value to the long variable.
+7.if n<2(n=1 or n=0 since we have already checked the input value conditions that they and their differance are non-negative) then it results 1 as previously we have initialised the long variable to 1.
+8.Finally i have returned the factorial value.
+9.Now i performed the operations for finding the combination value using the formula.
+10.Finally i printed the combination value.
+
+pseudo code:
+fact :
+for(i from 2 to n)
+	res=res*i
+ret res
+.main :
+if x>=y
+	comb=fact(x)/fact(y)*fact(x-y)
+	print comb

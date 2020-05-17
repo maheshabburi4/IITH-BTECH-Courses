@@ -1,0 +1,21 @@
+Pseudo code :
+hamming_dist(a,b):
+	d=a^b,c=0
+	loop until d<=0
+		c+=d%2
+		d=d/2
+	Return c
+main:
+	do loop until a,b lies between 1 and 1024 
+		if loop ran atleast one time
+			print Error
+		input a,b
+	
+	print hamming_dist(a,b)
+
+Design :
+1.I used a do-while loop for running until user enters the inputs between 1 and 1024.I cheked this using bitwise in the while loop as it has to run if atleast one case gone wrong
+2.I used a flag for printing Error when loop runs atleast one time.i initialised flag to 0 which represents it's the first time of the loop to run.while loop is running i change the flag to 1 which for the next time represent the loop has already ran once.
+3.Taken inputs of a,b and printted the result obtained by calling the hamming_dist function with arguments a,b
+4.in the hamming_dist fum=nction I calculated the bitwise XOR which represents the number of bits that are different in bitwise representation of a,b(i.e., if bit1=bit2 bit1^bit2=0 if different =1 )which returns the value in decimal form.Now we need to count the no of one's in the bitwise representation of XOR value.
+5.for that i run loop until the value becomes 0 and divide by 2(converting into binary) and added the remainder every time which gives the total no. of ones as adding 0 doesn't make any change.After I have returned the count
