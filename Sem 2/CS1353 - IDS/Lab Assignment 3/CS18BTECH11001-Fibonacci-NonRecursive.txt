@@ -1,0 +1,22 @@
+f(3) = 2
+The time taken for finding 3th fibinocci number is : 0.000038
+
+f(7) = 13
+The time taken for finding 7th fibinocci number is : 0.000039
+
+20
+f(20) = 6765
+The time taken for finding 20th fibinocci number is : 0.000040
+
+f(21) = 10946
+The time taken for finding 21th fibinocci number is : 0.000041
+
+f(41) = 165580141
+The time taken for finding 41th fibinocci number is : 0.000045
+
+f(42) = 267914296
+The time taken for finding 42th fibinocci number is : 0.000046
+
+f(50) = 12586269025
+The time taken for finding 50th fibinocci number is : 0.000048
+

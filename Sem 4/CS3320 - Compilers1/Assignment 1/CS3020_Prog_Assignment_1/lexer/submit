@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ "$#" -lt 1 ]; then
+    echo "Illegal number of parameters"
+    echo "Usage: " $0 "<roll number>"
+    exit 1
+fi
+
+ASN_NO=0
+ROLL_NO=$(tr '[:lower:]' '[:upper:]' <<< "$1")
+
+FILES="README.md src/grammar/CoolLexer.g4 src/test_cases/*.cl"
+
+FILE_NAME="Asn$ROLL_NO.tar.gz"
+
+tar cjvf $FILE_NAME $FILES

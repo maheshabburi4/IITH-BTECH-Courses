@@ -1,0 +1,9 @@
+Consider a smart toll gate in a small town, where vehicles need not stop! The vehicles just cross the gate and a smart system there captures their ids (consider ids as some loose versions of the number plate, and can uniquely identify vehicles) of the vehicles. Consider that the vehicle ids are integers in the range 1 to 10,000. The system stores the ids of the vehicles that cross the gate on any calendar day. It is known that on a single day, maximum 100 vehicles will cross the gate.
+
+The smart toll gate system allows any police official to use the system efficiently to find whether vehicle of any particular id has crossed the gate on the day. For allowing that functionality, the system stores the ids of the vehicles that crossed the gate. Write a function storeNextVehicleID that can be invoked when any vehicle passes the gate. The function simply stores the id in a storage (may be a variable/data structure) so that the future searches by the police officials (as mentioned above) will be easy and efficient. In addition, the function storeNextVehicleID is expected to be efficient in handling the new ids.
+
+Assume that you have a main function that accepts the sequence of vehicle ids. Whenever a negative id is passed, you can consider that the day has ended and no more ids will come. Each time you get a new vehicle id in the main function, pass the ids to storeNextVehicleID. At the end of each call to storeNextVehicleID, before returning to the caller, print the configuration (contents) of the storage.
+
+N.B.:
+Use any appropriate storage choice for storing the ids. Apart from the vehicle ids, no other information is required to be stored.
+Assume that the code considers data for a single day only. So you do not have to simulate the behavior of the code across days. You do not have to flush the data storage.

@@ -1,8 +1,0 @@
-1.We have declared the first input with char data type as it stores the given symbols using ASCII characters.
-2.On giving 2nd and 3rd inputs more than 10^9 the int data type can't store it then the solution will be bad.
-3.As the multiplication of two integer numbers can be of range 10^18 and as the integer cant be used to store this value we have used long data type.
-4.Any operation of two integers will be stored as an integer.To convert them to required datatype we use typecasting to atleast one operand of required datatype.
-Eg: (long)a+b - will convert a from integer to long data type for which the result will be of long datatype.
-5.As the division value is to be store the decimal numbers too and as int data type can only store the integers we have used double(high precision) data type.
-6.we know that any number divided by 0 results infinity we are checking this case before performing division and outputting Error.
-7.I used %.10g because it eliminates all the 0's preceding after the last non-zero number in the double value upto 10 decimal values.

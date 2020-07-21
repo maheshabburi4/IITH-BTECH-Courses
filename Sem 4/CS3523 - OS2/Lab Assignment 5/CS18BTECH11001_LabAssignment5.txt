@@ -1,0 +1,24 @@
+PID = 1848
+00007f8f8d6a0000   1804K r-x-- libc-2.17.so
+00007f8f8d863000   2048K ----- libc-2.17.so
+00007f8f8da63000     16K r---- libc-2.17.so
+00007f8f8da67000      8K rw--- libc-2.17.so
+VIRTUAL     PHYSICAL
+7f8f8d6a0000  -> 13fa86000			//This virtual address represents the address of libc module of process with PID = 1848 running sample executable file.
+7f8f8d6a1000  13fa87000
+7f8f8d6a2000  13fd40000
+7f8f8d6a3000  13fd41000
+
+PID = 1847
+00007fa0b1792000   1804K r-x-- libc-2.17.so
+00007fa0b1955000   2048K ----- libc-2.17.so
+00007fa0b1b55000     16K r---- libc-2.17.so
+00007fa0b1b59000      8K rw--- libc-2.17.so
+VIRTUAL     PHYSICAL
+7fa0b1792000  -> 13fa86000			//This virtual address represents the address of libc module of process with PID = 1847 running sample executable file.
+7fa0b1793000  13fa87000
+7fa0b1794000  13fd40000
+7fa0b1795000  13fd41000
+
+
+-> represent same physical address but different Virtual Address.

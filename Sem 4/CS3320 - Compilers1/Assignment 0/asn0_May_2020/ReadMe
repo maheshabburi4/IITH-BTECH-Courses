@@ -1,0 +1,19 @@
+Installing Cool compiler:
+----------------------------------------------------------
+----------------------------------------------------------
+
+Instructions for Setup:
+1. Extract setup.tar.gz and enter directory.
+2. chmod +x setup.sh
+3. sudo ./setup.sh `whoami`
+
+Compiling: coolc test.cl
+This generates MIPS assembly code in file test.s
+
+Executing: spim test.s
+spim is a MIPS simulator. This executes the program.
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+

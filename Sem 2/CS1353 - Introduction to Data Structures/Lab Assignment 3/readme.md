@@ -1,1 +1,0 @@
-Write a recursive and a non-recursive program to find the nth Fibonacci number. Assume that the first two Fibonacci numbers are 0 and 1 respectively. Also, for both the programs, measure the running time w.r.t. different values of n. 

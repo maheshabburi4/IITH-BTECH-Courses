@@ -1,7 +1,0 @@
-1.first takes input N and checks whether the input is >0 or not(it is an invalid case and asks user to enter valid input).
-2.if above condition is satisfied then it takes input initial Balance and checks whether greater than 0 or not.
-3.if above condition is satisfied then it takes input of the operator to be performed.
-4.if the input is 'w' it prints Withdraw amount and substracts the entered amount from the balance and checks if it is valid or not by checking if the balance is negative or positive.if not valid adds the substracted amount to return the before value.
-5.if it is 'a' the entered amount will be added to the balance and prints Success.
-6.if it is 'p' then it printd the current balance.
-7.if the entered input is not either of these then it prints "Error".
