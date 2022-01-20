@@ -41,3 +41,14 @@
 5.  CS2443 Algorithms
 6.  CS3320 Compilers-I
 7.  CS3523 Operating Systems-II
+
+## SEMESTER 5:
+1. AI3002 Introduction to Brain and Neuroscience
+2. CH6460 Bioprocess Technology
+3. CS3423 Compilers-II
+4. CS3530 Computer Networks I
+5. CS3550 DBMS I
+6. CS5300 Parallel and Concurrent Programming
+7. CS5590 Foundations of Machine Learning
+8. CS5820 Graphical Processing Unit: Hardware and Software
+9. CS6350 Topics in Combinatorics
