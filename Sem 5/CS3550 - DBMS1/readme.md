@@ -1,0 +1,1 @@
+The Slides can be found here: https://www.db-book.com/db6/slide-dir/index.html
