@@ -52,3 +52,9 @@
 7. CS5590 Foundations of Machine Learning
 8. CS5820 Graphical Processing Unit: Hardware and Software
 9. CS6350 Topics in Combinatorics
+
+## SEMESTER 6:
+1. CS3563 Introduction to DBMS II
+2. CS5040 Linear Optimization
+3. CS6903 Network Security
+4. CS3543 Computer Networks II
