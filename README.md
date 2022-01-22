@@ -8,7 +8,6 @@
 5.  ID1340 Digital System Design
 6.  MA1220 Calculus-II
 
-
 ## SEMESTER 2:
 1. BO1010 Introduction to Life Sciences
 2. CS1340 Discrete Structure - II
@@ -58,3 +57,9 @@
 2. CS5040 Linear Optimization
 3. CS6903 Network Security
 4. CS3543 Computer Networks II
+
+## SEMESTER 7:
+1. CH2110 Biological Engineering
+2. CS5500 Reinforcement Learning
+3. CS6160 Cryptology
+4. CS6890 Fraud Analytics
